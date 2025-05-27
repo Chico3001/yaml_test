@@ -13,7 +13,7 @@ jobs:
     steps:
     - name: Probar si el branch es el correcto
       if: github.ref == 'refs/heads/main'
-      run: 
+      run: |
         echo "accion 01"
         exit 1
 
