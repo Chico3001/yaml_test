@@ -11,10 +11,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: probar si el branch es el correcto
+    - name: Probar si el branch es el correcto
       if: github.ref != 'refs/heads/main'
-      run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      run: echo "accion 01"
 
+    - name: Accion 02
+      run: echo "accion 02"
+
+
+      # - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       # - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       # - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       # - name: Check out repository code
