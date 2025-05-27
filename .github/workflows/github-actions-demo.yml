@@ -8,8 +8,6 @@ on:
 
 jobs:
   Explore-GitHub-Actions:
-    if: github.ref == 'refs/heads/main'
-
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
