@@ -14,7 +14,7 @@ jobs:
     - name: Probar si el branch es el correcto
       if: github.ref == 'refs/heads/main'
       run: |
-        echo "accion 01"
+        echo "❌ Este flujo no debería correr en 'main'. Abortando..."
         exit 1
 
     - name: Accion 02
