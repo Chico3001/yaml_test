@@ -15,8 +15,21 @@ jobs:
     - name: Probar si el branch es el correcto
       if: github.ref == 'refs/heads/main'
       run: |
-        echo "❌ Este flujo no debería correr en 'main'. Abortando..."
-        exit 1
+        current_time_cdmx=$(TZ=America/Mexico_City date +'%u %H')
+        day_of_week=$(echo $current_time_cdmx | cut -d' ' -f1)
+        echo "Hora y día en CDMX: $current_time_cdmx"
+
+        # hour=$(echo $current_time_cdmx | cut -d' ' -f2)
+        # if [ "$day_of_week" -eq 1 ] && [ "$hour" -eq 9 ]; then
+        #   echo "Es lunes 9 AM CDMX, ejecutando job"
+        #   echo "run_job=true" >> $GITHUB_OUTPUT
+        # else
+        #   echo "No es lunes 9 AM CDMX, cancelando job"
+        #   echo "run_job=false" >> $GITHUB_OUTPUT
+        # fi
+
+        # echo "❌ Este flujo no debería correr en 'main'. Abortando..."
+        # exit 1
 
     - name: Accion 02
       run: echo "accion 02 a"
