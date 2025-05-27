@@ -8,7 +8,7 @@ on:
 
 jobs:
   Explore-GitHub-Actions:
-    if: github.repository == 'refs/head/main'
+    if: github.ref == 'refs/head/main'
 
     runs-on: ubuntu-latest
     steps:
