@@ -12,8 +12,10 @@ jobs:
 
     steps:
     - name: Probar si el branch es el correcto
-      if: github.ref != 'refs/heads/main'
-      run: echo "accion 01"
+      if: github.ref == 'refs/heads/main'
+      run: 
+        echo "accion 01"
+        exit 1
 
     - name: Accion 02
       run: echo "accion 02"
