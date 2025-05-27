@@ -4,7 +4,7 @@ run-name: ${{ github.actor }} is testing out GitHub Actions on ${{ github.ref }}
 on: 
   push:
     branches:
-    - main
+    - *
 
 jobs:
   build:
