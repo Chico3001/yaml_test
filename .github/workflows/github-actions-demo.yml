@@ -15,7 +15,7 @@ jobs:
       if: github.ref == 'refs/heads/main'
       run: |
         echo "accion 01"
-        exit 0
+        exit 1
 
     - name: Accion 02
       run: echo "accion 02"
