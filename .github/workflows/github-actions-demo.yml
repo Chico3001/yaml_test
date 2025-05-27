@@ -8,7 +8,7 @@ on:
 
 jobs:
   Explore-GitHub-Actions:
-    if: github.repository == 'octo-org/octo-repo-prod'
+    if: github.repository == 'refs/head/main'
 
     runs-on: ubuntu-latest
     steps:
@@ -23,3 +23,4 @@ jobs:
       #   run: |
       #     ls ${{ github.workspace }}
       # - run: echo "🍏 This job's status is ${{ job.status }}."
+
