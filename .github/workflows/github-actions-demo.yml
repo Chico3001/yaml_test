@@ -20,7 +20,8 @@ jobs:
         day_of_week=$(echo $current_time_cdmx | cut -d' ' -f1)
         hour=$(echo $current_time_cdmx | cut -d' ' -f2)
 
-        if [ "$day_of_week" -ne 1 ] then
+        if [ "$day_of_week" -ne 1 ]
+        then
         echo "❌ Este branch solo esta activo los lunes, cancelando"
         exit 1
         fi
