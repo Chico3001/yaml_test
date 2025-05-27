@@ -16,7 +16,7 @@ jobs:
       if: github.ref == 'refs/heads/main'
       run: |
         current_time_cdmx=$(TZ=America/Mexico_City date +'%u %H')
-        # echo $current_time_cdmx
+        echo $current_time_cdmx
         # day_of_week=$(echo $current_time_cdmx | cut -d' ' -f1)
         # echo "Hora y día en CDMX: $current_time_cdmx"
 
