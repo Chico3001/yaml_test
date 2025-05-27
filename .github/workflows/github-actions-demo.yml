@@ -18,7 +18,7 @@ jobs:
         exit 1
 
     - name: Accion 02
-      run: echo "accion 02"
+      run: echo "accion 02 a"
 
 
       # - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
