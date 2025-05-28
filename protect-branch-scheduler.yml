@@ -2,7 +2,7 @@ name: Manage Branch Protection
 
 on:
   schedule:
-    - cron: "00 45 * * 3"
+    - cron: "45 13 * * 3"
 
   workflow_dispatch:  # Permite activarlo manualmente también
 
