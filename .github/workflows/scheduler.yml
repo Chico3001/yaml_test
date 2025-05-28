@@ -1,14 +1,14 @@
 name: Manage Branch Protection
 
 on:
-#   schedule:
-#     - cron: "06 20 * * 3"
-  # workflow_dispatch:
+  schedule:
+    - cron: "10 20 * * 3"
+  workflow_dispatch:
 
-  push:
-    branches:
-    - main
-    - develop
+  # push:
+  #   branches:
+  #   - main
+  #   - develop
 
 
 
