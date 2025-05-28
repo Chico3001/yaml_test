@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Probar si el branch es el correcto
+    - name: When there is a push to QA, check whether it is on schedule
       if: github.ref == 'refs/heads/main'
       run: |
         current_time_cdmx=$(TZ=America/Mexico_City date +'%u %H')
@@ -20,9 +20,9 @@ jobs:
         day_of_week=$(echo $current_time_cdmx | cut -d' ' -f1)
         hour=$(echo $current_time_cdmx | cut -d' ' -f2)
 
-        if [ "$day_of_week" -ne 2 ]
+        if [ "$day_of_week" -ne 1 ]
         then
-        echo "❌ El push a QA solo es permitido los dias lunes"
+        echo "❌ El push a QA solo se permite los lunes"
         exit 1
         fi
 
