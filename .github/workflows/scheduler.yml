@@ -2,8 +2,7 @@ name: Manage Branch Protection
 
 on:
   schedule:
-    - cron: "05 20 * * 3"
-    - timezone: 'America/Mexico_City'
+    - cron: "06 20 * * 3"
 
   workflow_dispatch:  # Permite activarlo manualmente también
 
