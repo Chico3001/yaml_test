@@ -1,10 +1,10 @@
 name: Manage Branch Protection
 
-on:
-  schedule:
-    - cron: "06 20 * * 3"
+# on:
+#   schedule:
+#     - cron: "06 20 * * 3"
 
-  workflow_dispatch:  # Permite activarlo manualmente también
+  workflow_dispatch:
 
 jobs:
   manage-branch:
@@ -13,7 +13,9 @@ jobs:
       - name: enable branch
         run: |
           echo "enabling branch"
-          exit 0
+          echo $(date +%u)
+          echo $(date)
+          # exit 0
 
       # - name: Set up variables
       #   id: vars
