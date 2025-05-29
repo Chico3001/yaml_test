@@ -35,7 +35,7 @@ body=$(echo "$response" | head -n -1)
 status=$(echo "$response" | tail -n1)
 
 if [ "$status" = "204" ]; then
-  echo "✅ Rama protegida exitosamente."
+  echo "✅ Rama desprotegida exitosamente."
 else
   echo "❌ Error $status al proteger rama:"
   echo "$body"
