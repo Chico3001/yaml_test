@@ -11,6 +11,6 @@ on:
 jobs:
   main_branch:
     name: Main branch
-    runs-on: ubuntu/latest
+    runs-on: ubuntu-latest
     steps:
       - run: echo "hola mundo"
