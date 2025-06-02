@@ -6,13 +6,14 @@ on:
   #     - main
 
   schedule:
-  - cron: '*/5 * * * *'
+  - cron: '4/5 * * * *'
 
 jobs:
   main_branch:
     name: Main branch
     runs-on: ubuntu-latest
     steps:
+
       - name: Step 01
         run: |
           echo "hola mundo 01"
