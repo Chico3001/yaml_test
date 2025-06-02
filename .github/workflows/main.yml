@@ -1,0 +1,12 @@
+name: Main branch actions
+
+on:
+  schedule:
+  - cron: 5 * * * *
+
+jobs:
+  main_branch:
+    name: Main branch
+    runs-on: ubuntu/latest
+    steps:
+      - run: echo "hola mundo"
