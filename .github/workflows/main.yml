@@ -13,4 +13,7 @@ jobs:
     name: Main branch
     runs-on: ubuntu-latest
     steps:
-      - run: echo "hola mundo"
+      - name: Step 01
+        run: |
+          echo "hola mundo"
+          echo "Mensaje del commit: ${{ github.event.head_commit.message }}"
