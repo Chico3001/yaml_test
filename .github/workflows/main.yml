@@ -17,4 +17,5 @@ jobs:
       - name: Step 01
         run: |
           echo "hola mundo 01"
+          echo "Hora y día en CDMX: $(TZ=America/Mexico_City date)"
           echo "Mensaje del commit: ${{ github.event.head_commit.message }}"
