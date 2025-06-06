@@ -36,6 +36,6 @@ jobs:
           else
           echo $day
           echo $hour
-          # echo "❌ Error: El Push a QA-B2 solo se permite los dias miercoles"
+          echo "❌ Error: El Push a QA-B2 solo se permite los dias miercoles"
           # exit 1
           fi
