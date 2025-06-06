@@ -19,3 +19,18 @@ jobs:
           echo "hola mundo 01"
           echo "Hora y día en CDMX: $(TZ=America/Mexico_City date)"
           echo "Mensaje del commit: ${{ github.event.head_commit.message }}"
+
+      - name: Test schedule
+        run: |
+          echo "Current date and time is $(TZ=America/Mexico_City date)"
+          current_time_cdmx=$(TZ=America/Mexico_City date +'%u %H')
+          day=$(TZ=America/Mexico_City date +'%u')
+          hour=$(TZ=America/Mexico_City date +'%H')
+
+          # if { [ "$day" -eq 4 ] }; then
+          # { [ "$day" -eq 5 ] && [ "$hour" -lt 1 ]; }; then
+          echo $day
+          echo $hour
+          # echo "❌ Error: El Push a QA-B2 solo se permite los dias miercoles"
+          # exit 1
+          # fi
