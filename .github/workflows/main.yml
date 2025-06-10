@@ -30,7 +30,7 @@ jobs:
             echo "Dia permitido"
             :
           elif [[ $day -eq 2 && $hour -lt 1 ]]; then
-            echo "Dia posterior dentro del horario"
+            echo "Zona de seguridad"
             :
           else
 
