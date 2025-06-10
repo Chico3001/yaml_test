@@ -26,7 +26,7 @@ jobs:
           day=$(TZ=America/Mexico_City date +'%u')
           hour=$(TZ=America/Mexico_City date +'%H')
 
-          if [[ $day -eq 2 ]]; then
+          if [[ $day -eq 1 ]]; then
             echo "Dia permitido"
             :
           elif [[ $day -eq 2 && $hour -lt 1 ]]; then
