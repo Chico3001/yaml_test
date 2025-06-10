@@ -23,7 +23,6 @@ jobs:
       - name: Test schedule
         run: |
           echo "Current date and time is $(TZ=America/Mexico_City date)"
-          current_time_cdmx=$(TZ=America/Mexico_City date +'%u %H')
           day=$(TZ=America/Mexico_City date +'%u')
           hour=$(TZ=America/Mexico_City date +'%H')
 
@@ -34,8 +33,6 @@ jobs:
             # Martes antes de 1 am: permitido
             :
           else
-          echo $day
-          echo $hour
           echo "❌ Error: El Push a QA-B2 solo se permite los dias miercoles"
           # exit 1
           fi
