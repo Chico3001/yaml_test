@@ -4,7 +4,7 @@ on:
   schedule:
     # 00:00 CDMX es 06:00 UTC
     # Formato: Minuto Hora Día Mes Día-de-la-semana
-    - cron: '16 04 * * *'
+    - cron: '37 08 * * *'
   workflow_dispatch: 
 
 jobs:
