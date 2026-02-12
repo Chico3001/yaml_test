@@ -1,39 +1,38 @@
-name: Main branch actions
+name: Scheduled Pre-release (Mexico City Time)
 
 on:
-  push:
-    branches:
-      - main
-
-  # schedule:
-  # - cron: '4/5 * * * *'
+  schedule:
+    # 00:00 CDMX es 06:00 UTC
+    # Formato: Minuto Hora Día Mes Día-de-la-semana
+    - cron: '03 04 * * *'
+  workflow_dispatch: 
 
 jobs:
-  main_branch:
-    name: Main branch
+  create-release:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      - name: Step 01
+      - name: Generate Tag Name
+        id: vars
         run: |
-          echo "hola mundo 01"
-          echo "Hora y día en CDMX: $(TZ=America/Mexico_City date)"
-          echo "Mensaje del commit: ${{ github.event.head_commit.message }}"
+          # Configuramos la zona horaria para que el tag coincida con CDMX
+          # v.YYYY.MM.DD-qa
+          TAG_NAME="v.$(TZ='America/Mexico_City' date +'%Y.%m.%d')-qa"
+          echo "tag=$TAG_NAME" >> $GITHUB_OUTPUT
 
-      - name: Test schedule
-        run: |
-          echo "Current date and time is $(TZ=America/Mexico_City date)"
-          day=$(TZ=America/Mexico_City date +'%u')
-          hour=$(TZ=America/Mexico_City date +'%H')
-
-          if [[ $day -eq 1 ]]; then
-            echo "Dia permitido"
-            :
-          elif [[ $day -eq 2 && $hour -lt 1 ]]; then
-            echo "Zona de seguridad"
-            :
-          else
-
-          echo "❌ Error: El Push a QA-B2 solo se permite los dias miercoles"
-          exit 1
-          fi
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.vars.outputs.tag }}
+          name: "Pre-release ${{ steps.vars.outputs.tag }}"
+          body: |
+            Release automático de QA generado el $(TZ='America/Mexico_City' date +'%Y-%m-%d %H:%M').
+            Zona Horaria: America/Mexico_City
+          draft: false
+          prerelease: true
+          target_commitish: main
